@@ -8,3 +8,24 @@ function add(param1: Alpha, param2: Alpha) : Alpha {
 }
 
 console.log(add(3,4))
+
+type NormalUserType = {
+    name: string
+}
+type AdminUserType = {
+    name: string,
+    role: 'admin'
+}
+
+
+function IsAdmin (user: NormalUserType | AdminUserType) {
+    if('role' in user) {
+        return `I am an admin and my role is ${user.role}`;
+    } else {
+        return 'I am an normal user';
+    }
+}
+const normalUser : NormalUserType = {name: "sajib"};
+const adminUser : AdminUserType = {name: "admin sajib", role: "admin"};
+
+console.log(IsAdmin(adminUser))
