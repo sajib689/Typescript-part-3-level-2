@@ -1,12 +1,15 @@
 class Counter {
-    counter: number;
-    constructor(counter: number) {
-        this.counter = counter;
-    }
+   static counter: number = 0;
+   
     increment() {
-        return this.counter  = this.counter + 1
+        return Counter.counter = Counter.counter + 1
     }
     decrement () {
-        return this.counter = this.counter - 1
+        return  Counter.counter = Counter.counter - 1
     }
 }
+
+const static1 = new Counter()
+
+console.log(static1.increment())
+console.log(static1.decrement())
